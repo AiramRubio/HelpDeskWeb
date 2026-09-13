@@ -9,7 +9,7 @@ namespace HelpDeskWeb.ViewModels
 
         [Required(ErrorMessage = "Passsword is required.")]
         [DataType(DataType.Password)]
-        public string Passaword { get; set; }
+        public string Password { get; set; }
 
         [Display(Name ="Remember me?")]
 
