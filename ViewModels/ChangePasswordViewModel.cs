@@ -19,7 +19,7 @@ namespace HelpDeskWeb.ViewModels
         [Required(ErrorMessage = "Confirm Password is required.")]
         [DataType(DataType.Password)]
         [Display(Name = "Confirm New Password")]
-        public string ConfirmPassword { get; set; }
+        public string ConfirmNewPassword { get; set; }
 
 
 
