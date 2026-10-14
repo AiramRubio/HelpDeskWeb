@@ -6,8 +6,11 @@ namespace HelpDeskWeb.Data
 
 {
     public class AppDbContext : IdentityDbContext<User>
-
     {
+        public DbSet<TicketStatus> TicketStatus { get; set; }
+
+        public DbSet<TicketPriority> TicketPriority { get; set; }
+
         public AppDbContext(DbContextOptions options) : base(options)
         {
         }
@@ -15,22 +18,39 @@ namespace HelpDeskWeb.Data
         protected override void OnModelCreating(ModelBuilder builder)
 
         {
-
             base.OnModelCreating(builder);
-
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
 
             builder.Entity<User>()
             .Property(u => u.CreatedAt)
             .HasDefaultValueSql("GETUTCDATE()");  // SQL Server
 
-
             builder.Entity<User>()
             .Property(u => u.UpdatedAt)
             .HasDefaultValueSql("GETUTCDATE()");  // SQL Server
 
+            builder.Entity<TicketStatus>()
+            .Property(u => u.CreatedAt)
+            .HasDefaultValueSql("GETUTCDATE()");
+
+            builder.Entity<TicketStatus>()
+            .Property(u => u.UpdatedAt)
+            .HasDefaultValueSql("GETUTCDATE()");
+
+            builder.Entity<TicketStatus>()
+                .HasIndex(ts => ts.Name)
+                .IsUnique();
+
+            builder.Entity<TicketPriority>()
+            .Property(u => u.CreatedAt)
+            .HasDefaultValueSql("GETUTCDATE()");
+
+            builder.Entity<TicketPriority>()
+            .Property(u => u.UpdatedAt)
+            .HasDefaultValueSql("GETUTCDATE()");
+
+            builder.Entity<TicketPriority>()
+                .HasIndex(tp => tp.Name)
+                .IsUnique();
         }
     }
 
