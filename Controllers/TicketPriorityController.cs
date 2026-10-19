@@ -7,11 +7,11 @@ using HelpDeskWeb.Data;
 
 namespace HelpDeskWeb.Controllers
 {
-    public class TicketPriorityController : Controller
+    public class Ticket : Controller
     {
         AppDbContext _appDbContext;
 
-        public TicketPriorityController(AppDbContext dbContext)
+        public Ticket(AppDbContext dbContext)
         {
             _appDbContext = dbContext;
         }
