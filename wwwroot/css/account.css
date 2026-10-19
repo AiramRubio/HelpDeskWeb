@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 .account-container {
     background-image: url('Car Drift GIF.gif');
+=======
+﻿.account-container {
+    background-image: url('gif.gif');
+>>>>>>> respaldo-remoto-origin-main
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,7 +22,14 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+<<<<<<< HEAD
     max-width: 500px;
     width: 100%;
     opacity: .9;
 }
+=======
+    max-width:500px;
+    width:100%;
+    opacity: .9;
+}
+>>>>>>> respaldo-remoto-origin-main

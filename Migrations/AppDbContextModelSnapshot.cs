@@ -22,6 +22,7 @@ namespace HelpDeskWeb.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+<<<<<<< HEAD
             modelBuilder.Entity("HelpDeskWeb.Models.TicketPriority", b =>
                 {
                     b.Property<int>("Id")
@@ -166,6 +167,8 @@ namespace HelpDeskWeb.Migrations
                     b.ToTable("TicketStatus");
                 });
 
+=======
+>>>>>>> respaldo-remoto-origin-main
             modelBuilder.Entity("HelpDeskWeb.Models.User", b =>
                 {
                     b.Property<string>("Id")

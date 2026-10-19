@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Microsoft.AspNetCore.Mvc;
+>>>>>>> respaldo-remoto-origin-main
 using Microsoft.AspNetCore.Identity;
 using HelpDeskWeb.Models;
 using HelpDeskWeb.ViewModels;
@@ -71,11 +75,19 @@ namespace HelpDeskWeb.Controllers
 
             var result = await userManager.CreateAsync(user, model.Password);
 
+<<<<<<< HEAD
             if(result.Succeeded)
             {
                 var roleExists = await roleManager.RoleExistsAsync("User");
 
                 if(!roleExists)
+=======
+            if (result.Succeeded)
+            {
+                var roleExists = await roleManager.RoleExistsAsync("User");
+
+                if (!roleExists)
+>>>>>>> respaldo-remoto-origin-main
                 {
                     var role = new IdentityRole("User");
                     await roleManager.CreateAsync(role);
@@ -120,7 +132,11 @@ namespace HelpDeskWeb.Controllers
         [HttpGet]
         public IActionResult ChangePassword(string username)
         {
+<<<<<<< HEAD
             if(string.IsNullOrEmpty(username))
+=======
+            if (string.IsNullOrEmpty(username))
+>>>>>>> respaldo-remoto-origin-main
             {
                 return RedirectToAction("VerifyEmail", "Account");
             }
@@ -136,24 +152,43 @@ namespace HelpDeskWeb.Controllers
                 return View(model);
             }
 
+<<<<<<< HEAD
            var user = await userManager.FindByEmailAsync(model.Email);
 
             if(user == null)
+=======
+            var user = await userManager.FindByEmailAsync(model.Email);
+
+            if (user == null)
+>>>>>>> respaldo-remoto-origin-main
             {
                 ModelState.AddModelError("", "User not found.");
                 return View(model);
             }
             var result = await userManager.RemovePasswordAsync(user);
+<<<<<<< HEAD
             if(result.Succeeded)
+=======
+            if (result.Succeeded)
+>>>>>>> respaldo-remoto-origin-main
             {
                 result = await userManager.AddPasswordAsync(user, model.NewPassword);
                 return RedirectToAction("Login", "Account");
             }
             else
+<<<<<<< HEAD
             { foreach (var error in result.Errors) { 
                 ModelState.AddModelError("", error.Description);
                 } 
             return View(model);
+=======
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View(model);
+>>>>>>> respaldo-remoto-origin-main
             }
         }
 
@@ -164,6 +199,7 @@ namespace HelpDeskWeb.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+<<<<<<< HEAD
     }
 }
 
@@ -174,3 +210,8 @@ namespace HelpDeskWeb.Controllers
 
 
 
+=======
+    
+    }
+}
+>>>>>>> respaldo-remoto-origin-main

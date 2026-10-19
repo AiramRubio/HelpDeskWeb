@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Identity;
+=======
+﻿using Microsoft.AspNetCore.Identity;
+>>>>>>> respaldo-remoto-origin-main
 using HelpDeskWeb.Data;
 using HelpDeskWeb.Models;
 
@@ -8,6 +12,7 @@ namespace HelpDeskWeb.Services
     public class SeedService
     {
 
+<<<<<<< HEAD
         public static async Task SeedDatabase(IServiceProvider serviceProvide)
         {
 
@@ -19,6 +24,19 @@ namespace HelpDeskWeb.Services
 
 
             try
+=======
+        public static async Task SeedDatabase(IServiceProvider serviceProvide) 
+        { 
+        
+        using var scope = serviceProvide.CreateScope();
+        var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+        var logger = scope.ServiceProvider.GetRequiredService<ILogger<SeedService>>();
+
+
+            try 
+>>>>>>> respaldo-remoto-origin-main
             {
                 // Ensure the database is ready
                 logger.LogInformation("Ensuring the database is created");

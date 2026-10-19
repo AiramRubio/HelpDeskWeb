@@ -31,6 +31,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Home" asp-action="Admin">Admin</a>
                             </li>
+<<<<<<< HEAD
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Catalogos
@@ -46,6 +47,21 @@
                                 <a class="nav-link" asp-controller="Home" asp-action="User">User</a>
                             </li>}
                          <partial name="_LoginPartial" /> 
+=======
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="TicketStatus" asp-action="Index">Status</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("User"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="User">User</a>
+                            </li>
+                        }
+                        <partial name="_LoginPartial" />
+
+
+>>>>>>> respaldo-remoto-origin-main
                     </ul>
                 </div>
             </div>
@@ -67,4 +83,8 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> respaldo-remoto-origin-main
